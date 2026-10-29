@@ -1,0 +1,49 @@
+PASS  C1 title present  
+PASS  C2 six sections  
+PASS  C3 five figure files included  
+PASS  C4 five figure captions  
+PASS  C5 six tables  found 6
+PASS  C6 no unresolved refs  
+PASS  C7 bibliography items  found 25
+PASS  N1 all 28 grid NLL values present in PDF  
+PASS  N2 k-curve B120 k8 = 0.2909  
+PASS  N3 B240 k8-k5 gap -0.0355  
+PASS  N4 B120 TOST equivalent p 8.6e-6  
+PASS  N5 H2 k2 B30 = -0.073  computed -0.0730
+PASS  N5 H2 k2 B120 = -0.2515  computed -0.2515
+PASS  N5 H2 k3 B120 = -0.332  computed -0.3317
+PASS  N5 H2 k3 B240 = -0.247  computed -0.2465
+PASS  N6 single NLL 0.3795/0.5265/0.6672/0.6564  
+PASS  N7 mnist k2 DE 0.0589  
+PASS  N8 cifar k5 DE 0.6302  
+PASS  N9 H4a mnist -0.0086  
+PASS  N10 H4b cifar -1.1406  
+PASS  N11 H4b k5 -1.3656  
+PASS  N12 G3 verdict PASS  
+PASS  N13 A1 B30 ES 0.3434  
+PASS  N13 A1 B30 final 0.3795  
+PASS  N13 A1 B60 ES 0.3491  
+PASS  N13 A1 B60 final 0.5265  
+PASS  N13 A1 B120 ES 0.3506  
+PASS  N13 A1 B120 final 0.6672  
+PASS  N14 A1 B120 DE-ES +0.0651  
+PASS  N15 A1 B120 ES-final -0.3166  
+PASS  N16 40-fold claim  
+PASS  N17 MLP params 109,386  
+PASS  N18 MLP slope 0.48 ms  
+PASS  N19 CNN slope 57.0 ms  
+PASS  N20 storage 0.438/0.135  
+PASS  P1 only-tested-setting flip claim  
+PASS  P2 sweet-spot band claim  
+PASS  P3 non-monotone registered deviation  
+PASS  P4 LLM disclosure present  
+PASS  N21a filesystem cells 21 (18 grid + 3 ablation)  (grid 18, ablation 3)
+PASS  N21b filesystem replicate records 210  (210)
+PASS  N21c per-stage cells S1+S2=14 S3=4  (v5 14, s3 4)
+PASS  N21d paper claims 18 grid + 3 ablation  
+PASS  N21e paper claims 210 replicate  
+PASS  N21f banned counts absent (22 grid / 250 replicate)  
+PASS  N21g per-axis breakdown present (14 + 4 + 3 cells)  
+
+pages: 17
+POSTCHECK ALL PASS

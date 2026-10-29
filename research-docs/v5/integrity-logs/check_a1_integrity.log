@@ -1,0 +1,24 @@
+PASS  I1 B30 seeds 0..9  
+PASS  I2 B30 versions = 2.14.1+cpu / numpy 2.1.3  
+PASS  I3 B30 config fields  
+PASS  I4 B30 final raw bit-identical to S1 single (10 seeds x 5)  mismatches=0
+PASS  I5 B30 final TS bit-identical (10 seeds x 7)  mismatches=0
+PASS  I6 B30 best_epoch/history consistency + tie rule  
+PASS  I7 B30 ES metrics finite  
+PASS  I1 B60 seeds 0..9  
+PASS  I2 B60 versions = 2.14.1+cpu / numpy 2.1.3  
+PASS  I3 B60 config fields  
+PASS  I4 B60 final raw bit-identical to S1 single (10 seeds x 5)  mismatches=0
+PASS  I5 B60 final TS bit-identical (10 seeds x 7)  mismatches=0
+PASS  I6 B60 best_epoch/history consistency + tie rule  
+PASS  I7 B60 ES metrics finite  
+PASS  I1 B120 seeds 0..9  
+PASS  I2 B120 versions = 2.14.1+cpu / numpy 2.1.3  
+PASS  I3 B120 config fields  
+PASS  I4 B120 final raw bit-identical to S1 single (10 seeds x 5)  mismatches=0
+PASS  I5 B120 final TS bit-identical (10 seeds x 7)  mismatches=0
+PASS  I6 B120 best_epoch/history consistency + tie rule  
+PASS  I7 B120 ES metrics finite  
+
+anchors verified (final vs S1): 30 seeds x 12 metrics
+ALL A1 INTEGRITY CHECKS PASS

@@ -1,0 +1,34 @@
+========================================================================
+T1  ES vs final (paired, per budget)
+  B 30: ES 0.3434 vs final 0.3795 | diff -0.0361 sd 0.0091 CI [-0.0426,-0.0296] p=0.0020
+  B 60: ES 0.3491 vs final 0.5265 | diff -0.1774 sd 0.0150 CI [-0.1881,-0.1667] p=0.0020
+  B120: ES 0.3506 vs final 0.6672 | diff -0.3166 sd 0.0184 CI [-0.3298,-0.3035] p=0.0020
+T2  ES across budgets (RQ5 core)
+  30_to_60: diff +0.0057 CI [-0.0004,+0.0118] p=0.0723
+  60_to_120: diff +0.0015 CI [-0.0020,+0.0050] p=0.3516
+  30_to_120: diff +0.0072 CI [+0.0008,+0.0136] p=0.0352
+T3  final across budgets (control)
+  30_to_60: diff +0.1470 CI [+0.1367,+0.1573] p=0.0020
+  60_to_120: diff +0.1407 CI [+0.1235,+0.1579] p=0.0020
+  30_to_120: diff +0.2877 CI [+0.2776,+0.2978] p=0.0020
+T4  allocation gap DE(k2)-Single under both rules
+  B 30: ES-rule -0.0369 (p=0.0020) | final-rule -0.0730 (p=0.0020)
+  B 60: ES-rule -0.0173 (p=0.0020) | final-rule -0.1948 (p=0.0020)
+  B120: ES-rule +0.0651 (p=0.0020) | final-rule -0.2515 (p=0.0020)
+T5  best_epoch
+  B 30: mean 12.1 sd 2.1 range [8,15] values [12, 13, 12, 12, 12, 10, 15, 12, 8, 15]
+  B 60: mean 10.9 sd 2.6 range [7,14] values [8, 13, 12, 12, 12, 11, 7, 14, 7, 13]
+  B120: mean 10.7 sd 1.6 range [8,13] values [8, 11, 10, 11, 10, 11, 13, 9, 11, 13]
+========================================================================
+A2 H6 latency (median ms) and linearity
+  mlp_fmnist: 109,386 params, 0.438 MB/model, RSS(8 models)=3.5 MB
+    batch=1: k=1:0.044, k=2:0.081, k=3:0.118, k=5:0.202, k=8:0.347
+      slope 0.064 ms/member, R2=0.996584
+    batch=256: k=1:0.363, k=2:0.691, k=3:1.047, k=5:1.717, k=8:2.754
+      slope 0.479 ms/member, R2=0.995835
+  cnn_cifar10: 33,834 params, 0.135 MB/model, RSS(8 models)=0.0 MB
+    batch=1: k=1:0.360, k=2:0.726, k=3:1.086, k=5:1.811, k=8:2.906
+      slope 0.516 ms/member, R2=0.999655
+    batch=256: k=1:77.093, k=2:124.590, k=3:183.033, k=5:307.494, k=8:474.881
+      slope 57.029 ms/member, R2=0.999055
+wrote analysis_v5_a1a2.json + 3 CSVs to results/a1/

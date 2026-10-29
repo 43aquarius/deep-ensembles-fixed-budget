@@ -1,0 +1,58 @@
+== A. study-scale phrases: enumerate ALL, verify coherence ==
+   'N cells' phrases: [('18', 'grid'), ('14', 'grid'), ('10', ''), ('4', ''), ('3', 'ablation'), ('3', '')]
+   'N replicate' phrases: ['210']
+PASS  A1 cells phrases ⊆ {18 grid, 3 ablation, 14, 10, 4, 3}  [('10', ''), ('14', 'grid'), ('18', 'grid'), ('3', ''), ('3', 'ablation'), ('4', '')]
+PASS  A2 replicate phrases == {210}  ['210']
+PASS  A3 arithmetic 10+4+4=18 grid; +3 ablation = 21; x10 = 210  
+== B. grid structure: filesystem == paper's stated design ==
+PASS  B1 budget axis grid = B{30,60,120,240} x k{2,3,5,8} | divisibility  (fs 14 cells)
+PASS  B2 B30/B60 have no k8 (7.5/3.75 indivisible)  
+PASS  B3 S3 cells = {mnist B120 k2/k5, cifar B60 k2/k5}  [('cifar', 60, 2), ('cifar', 60, 5), ('mnist', 120, 2), ('mnist', 120, 5)]
+PASS  B4 A1 cells = fmnist B{30,60,120}  [('fmnist', 120, None), ('fmnist', 30, None), ('fmnist', 60, None)]
+PASS  B5 paper states divisibility rule for k  
+== C. per-record integrity sweep across all 21 cells ==
+PASS  C1 records total 210  (210)
+PASS  C2 seeds ⊆ {0..9} in every record  []
+PASS  C3 version stamps present in every record  []
+PASS  C4 single torch version across all 210 records  {'2.14.1+cpu'}
+== D. figures / tables / hypotheses / references ==
+PASS  D1 5 main + 4 supplementary figure PDFs on disk  (5+4)
+PASS  D2 tex embeds the 5 main figures  ['fig1_phase', 'fig2_mechanism', 'fig3_temperature', 'fig4_ood', 'fig5_cost']
+PASS  D2b 4 supplementary figures described (not embedded, shipped in zip)  (4 items)
+   table environments in tex: 6
+PASS  D3 tables >= 5 (grid + main + S3 + A1 + A2)  (6)
+PASS  D4 H1 mentioned in PDF text  
+PASS  D4 H2 mentioned in PDF text  
+PASS  D4 H3 mentioned in PDF text  
+PASS  D4 H4 mentioned in PDF text  
+PASS  D4 H5 mentioned in PDF text  
+PASS  D4 H6 mentioned in PDF text  
+   bibliography entries: 25
+PASS  D5 every \cite key has a \bibitem  []
+== E. budgets / k values / domains named ==
+PASS  E1 budget B=30 appears  
+PASS  E1 budget B=60 appears  
+PASS  E1 budget B=120 appears  
+PASS  E1 budget B=240 appears  
+PASS  E2 k set {2,3,5,8} stated  
+PASS  E3 domain Fashion-MNIST appears  
+PASS  E3 domain MNIST appears  
+PASS  E3 domain CIFAR appears  
+== F. '10/10' directional claims: enumerate for review ==
+   ... 52 on Fashion-MNIST, -1.141 on the CIFAR-10 CNN (all 2 seed-paired, 10/10 seeds 
+   ... direction- passed at all three steps (all CIs exclude zero, direction 10/10 seeds 
+   ... k=2 and -0.0152 at k=5-statistically non-zero (permutation P = 0.002, 10/10 seeds)
+   ... is -1.141 (k=2) and -1.366 (k=5), both with permutation P = 0.002 and 10/10 seeds;
+   ...  at δ=0.020: equivalent -1.1406, 95% CI [-1.1730, -1.1082], P =0.002, 10/10 seeds 
+   ... , P =0.002, 10/10 seeds -1.3656, 95% CI [-1.3869, -1.3444], P =0.002, 10/10 seeds 
+   ... 1 12.1 ± 2.2 10.9 ± 1.7 10.7 ± 1.6 Contrast details (all P = 0.002, 10/10 seeds)
+   ... ats the k=2 ensemble (0.4157) by 0.0651 NLL (95% CI [0.0575, 0.0727]; 10/10 seeds)
+   ... he lowest budget the gap reverses: B=30, k=5 gives +0.0096 (P =0.002, 10/10 seeds)
+   ...  MNIST (LeCun et al., 1998), KMNIST (Clanuwat et al., 2018) and CIFAR-10/100 (Kriz
+PASS  F1 10/10 claims present (directional consistency)  (10 occurrences)
+== G. Holm / TOST margins ==
+   'Holm' occurrences: 4
+   'TOST' occurrences: 11
+PASS  G1 TOST margin 0.020 stated  
+
+AUDIT ALL PASS

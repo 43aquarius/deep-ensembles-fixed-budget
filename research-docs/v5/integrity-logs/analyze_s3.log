@@ -1,0 +1,57 @@
+========================================================================
+FAMILY 1 (per-cell, Holm over 5 contrasts) - NLL
+  mnist_B120_k2    DEEPENS-SINGLE d=-0.0086 [-0.0111,-0.0061] p_holm=0.0098 (0+/ 10-)
+  mnist_B120_k2    SNAPSHOT-SINGLE d=+0.0007 [-0.0016,+0.0030] p_holm=0.4844 (6+/ 4-)
+  mnist_B120_k2    SWA-SINGLE   d=+0.0034 [+0.0010,+0.0058] p_holm=0.0273 (9+/ 1-)
+  mnist_B120_k2    DEEPENS-SNAPSHOT d=-0.0093 [-0.0119,-0.0067] p_holm=0.0098 (0+/ 10-)
+  mnist_B120_k2    SNAPSHOT-SWA d=-0.0027 [-0.0031,-0.0023] p_holm=0.0098 (0+/ 10-)
+  mnist_B120_k5    DEEPENS-SINGLE d=-0.0152 [-0.0175,-0.0129] p_holm=0.0098 (0+/ 10-)
+  mnist_B120_k5    SNAPSHOT-SINGLE d=-0.0007 [-0.0021,+0.0008] p_holm=0.3340 (4+/ 6-)
+  mnist_B120_k5    SWA-SINGLE   d=+0.0044 [+0.0028,+0.0060] p_holm=0.0098 (10+/ 0-)
+  mnist_B120_k5    DEEPENS-SNAPSHOT d=-0.0146 [-0.0164,-0.0127] p_holm=0.0098 (0+/ 10-)
+  mnist_B120_k5    SNAPSHOT-SWA d=-0.0051 [-0.0055,-0.0047] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k2     DEEPENS-SINGLE d=-1.1406 [-1.1730,-1.1082] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k2     SNAPSHOT-SINGLE d=-0.9014 [-0.9256,-0.8771] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k2     SWA-SINGLE   d=-0.7137 [-0.7448,-0.6827] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k2     DEEPENS-SNAPSHOT d=-0.2392 [-0.2722,-0.2061] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k2     SNAPSHOT-SWA d=-0.1877 [-0.1995,-0.1758] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k5     DEEPENS-SINGLE d=-1.3656 [-1.3869,-1.3444] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k5     SNAPSHOT-SINGLE d=-1.2242 [-1.2438,-1.2045] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k5     SWA-SINGLE   d=-1.0742 [-1.0945,-1.0538] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k5     DEEPENS-SNAPSHOT d=-0.1415 [-0.1585,-0.1245] p_holm=0.0098 (0+/ 10-)
+  cifar_B60_k5     SNAPSHOT-SWA d=-0.1500 [-0.1556,-0.1443] p_holm=0.0098 (0+/ 10-)
+
+FAMILY 2 (within-domain allocation)
+  mnist  DE(k5)-DE(k2) nll     d=-0.0066 p=0.0020 tost_equiv=YES (p=1.9e-05)
+  mnist  DE(k5)-DE(k2) ts_nll  d=-0.0036 p=0.0020
+  cifar  DE(k5)-DE(k2) nll     d=-0.2251 p=0.0020 tost_equiv=no (p=1.0e+00)
+  cifar  DE(k5)-DE(k2) ts_nll  d=-0.1130 p=0.0020
+
+H4a MNIST attenuation (TOST, delta=0.020):
+  k2: d=-0.0086 ci90=[-0.01066,-0.00658] tost_p=1.48e-06 equiv=True (perm_p=0.0020, 10/10 negative)
+  k5: d=-0.0152 ci90=[-0.01708,-0.01338] tost_p=5.37e-04 equiv=True (perm_p=0.0020, 10/10 negative)
+  ts_note: 1.9958777458189019
+
+H4b CIFAR amplification:
+  k2: d=-1.1406 [-1.1730,-1.1082] p=0.00195 amplified=True (10/10 negative)
+  k5: d=-1.3656 [-1.3869,-1.3444] p=0.00195 amplified=True (10/10 negative)
+
+G3 gate: PASS
+  H4a_mnist_k2: PASS
+  H4a_mnist_k5: PASS
+  H4b_cifar_k2: PASS
+  H4b_cifar_k5: PASS
+  boundary pattern replicated: MNIST attenuation (within 0.020) + CIFAR amplification (DE-SG strongly negative); allocation advice is regime-dependent
+
+OOD AUROC (MSP, mean):
+  mnist_k2: fmnist_single=0.9223  fmnist_deepens=0.9361  fmnist_snapshot=0.9311  fmnist_swa=0.9284  kmnist_single=0.9204  kmnist_deepens=0.9380  kmnist_snapshot=0.9238  kmnist_swa=0.9189
+  mnist_k5: fmnist_single=0.9223  fmnist_deepens=0.9416  fmnist_snapshot=0.9277  fmnist_swa=0.9240  kmnist_single=0.9204  kmnist_deepens=0.9473  kmnist_snapshot=0.9268  kmnist_swa=0.9186
+  cifar_k2: cifar100_single=0.6799  cifar100_deepens=0.7267  cifar100_snapshot=0.7057  cifar100_swa=0.6948
+  cifar_k5: cifar100_single=0.6799  cifar100_deepens=0.7612  cifar100_snapshot=0.7291  cifar100_swa=0.7102
+
+cross-regime context:
+  fmnist_B120: {'single_nll': 0.6671938689957313, 'deepens_nll': 0.4156520149065857, 'snapshot_nll': 0.5190657673228303, 'swa_nll': 0.5707572504393778}
+  fmnist_de_sg_B120_k2: -0.2515
+  mnist_de_sg_k2: -0.0086
+  cifar_de_sg_k2: -1.1406
+  interpretation: DE-SG gap by regime: FMNIST (mid) -0.2515 -> MNIST (near-sat) -0.0086 -> CIFAR (overconfident) -1.1406; the allocation advantage scales with the single model's headroom

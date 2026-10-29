@@ -23,3 +23,7 @@ Thumbs.db
 manuscript-source/main.pdf
 manuscript-source/main_v4_1.pdf
 manuscript-source/main_v4*.pdf
+
+# v5 re-run artefacts (intermediate checkpoints and determinism re-checks)
+results/cifar/ckpts/
+code/v5/s3redo_det_check.jsonl
